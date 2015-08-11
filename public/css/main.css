@@ -245,6 +245,8 @@ textarea {
   max-height: 600px;
   width: 95%;
   padding: 10px;
+  font-size: 1rem;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 .threads {
