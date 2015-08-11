@@ -159,7 +159,12 @@ var routes = [
     path: '/dashboard',
     config: {
       handler: services.dashboard,
-      auth: auth
+      auth: auth,
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
+        }
+      }
     }
   },
   {
@@ -189,9 +194,14 @@ var routes = [
   {
     method: 'GET',
     path: '/post',
+    handler: services.newThread,
     config: {
-      handler: services.newThread,
-      auth: auth
+      auth: auth,
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
+        }
+      }
     }
   },
   {
@@ -205,6 +215,11 @@ var routes = [
           category: Joi.string().hostname().lowercase().required(),
           title: Joi.string().required(),
           body: Joi.string().required()
+        }
+      },
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
         }
       }
     }
@@ -222,7 +237,12 @@ var routes = [
     path: '/thread/edit/{key}',
     config: {
       handler: services.edit,
-      auth: auth
+      auth: auth,
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
+        }
+      }
     }
   },
   {
@@ -230,7 +250,12 @@ var routes = [
     path: '/thread/edit/{key}',
     config: {
       auth: auth,
-      handler: posts.update
+      handler: posts.update,
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
+        }
+      }
     }
   },
   {
@@ -238,7 +263,12 @@ var routes = [
     path: '/thread/delete/{key}',
     config: {
       handler: services.deletePost,
-      auth: auth
+      auth: auth,
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
+        }
+      }
     }
   },
   {
@@ -254,7 +284,12 @@ var routes = [
     path: '/profile',
     config: {
       handler: services.profile,
-      auth: auth
+      auth: auth,
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
+        }
+      }
     }
   },
   {
@@ -267,6 +302,11 @@ var routes = [
         payload: {
           name: Joi.string().required(),
           password: Joi.any().optional()
+        }
+      },
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
         }
       }
     }
@@ -284,7 +324,12 @@ var routes = [
     path: '/logout',
     config: {
       handler: authenticate.logout,
-      auth: auth
+      auth: auth,
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
+        }
+      }
     }
   },
   {
@@ -300,7 +345,12 @@ var routes = [
     path: '/comment',
     config: {
       handler: services.addComment,
-      auth: auth
+      auth: auth,
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
+        }
+      }
     }
   },
   {
@@ -308,7 +358,12 @@ var routes = [
     path: '/comment/delete/{key}',
     config: {
       handler: services.deleteComment,
-      auth: auth
+      auth: auth,
+      plugins: {
+        'hapi-auth-cookie': {
+          redirectTo: '/'
+        }
+      }
     }
   }
 ];
