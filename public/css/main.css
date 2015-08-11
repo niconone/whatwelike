@@ -336,3 +336,7 @@ form.login input {
 .comments button.delete:hover {
   background-color: #f00;
 }
+
+.content img {
+  width: 100%;
+}
