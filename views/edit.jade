@@ -1,0 +1,18 @@
+extend layout
+
+block content
+  section
+    h1 edit thread
+
+    form(method='post', action='/thread/edit/#{post.key}', class='update')
+      h2 Category*
+      span= post.category
+      h2 Title*
+      input(type='text', name='title', required, value='#{post.title}')
+      h2 Post*
+      p.tip supports markdown
+      textarea(name='body', required)= post.body
+      input(type='hidden', name='created', value='#{post.created}')
+      input(type='hidden', name='pid', value='#{post.pid}')
+      input(type='hidden', name='crumb', value='#{crumb}')
+      button(type='submit') update

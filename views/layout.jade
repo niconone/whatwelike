@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title what we like
+    meta(charset='utf-8')
+    meta(content='width=device-width, height=device-height, user-scalable=no, initial-scale=0.8, maximum-scale=0.8, minimum-scale=0.8', name='viewport')
+    meta(content='yes', name='apple-mobile-web-app-capable')
+    link(rel='stylesheet', href='//brick.a.ssl.fastly.net/Roboto:200,200i,300')
+    link(rel='stylesheet', href='/css/main.css')
+    if analytics
+      != "<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', '" + analytics + "', 'auto');ga('send', 'pageview');</script>"
+
+  body
+    header
+      a.header(href='/') what we like
+      if session
+        block new
+          a#add(href='/post') +
+            span add a new thread
+      else
+        block login
+          form(method='post', action='/login', class='login')
+            if error
+              p.errors= error
+            input(type='email', name='email', placeholder='your@email.com', required)
+            input(type='password', name='password', placeholder='password', required)
+            input(type='hidden', name='crumb', value='#{crumb}')
+            a(href='/password/forgot', class='forgot') forgot password?
+            button(type='submit') sign in
+
+    #wrapper
+      .inner
+        .content
+          block content
+
+    block footer
+      footer
+        .inner
+          section
+            .user-actions
+              if !session
+                a(href='/signup') Join
+              else
+                a(href='/profile') Profile
+                a(href='/logout') Sign out
+    block script

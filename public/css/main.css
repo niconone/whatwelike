@@ -1,0 +1,284 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, appvar, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Main styles */
+
+@font-face {
+  font-family: 'knewave-outline';
+  src: url('/fonts/knewave-outline-webfont.woff');
+}
+
+html, body {
+  position: relative;
+}
+
+body {
+  background-color: #f1f1f1;
+  color: #111;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+section.home h1 {
+  background-color: #fff;
+  color: #333;
+  font-size: 3.9rem;
+  top: 70px;
+  left: 50px;
+  -webkit-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  position: fixed;
+  width: 590px;
+  height: 400px;
+  z-index: 1;
+  line-height: 4.6rem;
+  word-break: keep-all;
+}
+
+body.error {
+  background-color: #ff0d85;
+  color: #fff;
+}
+
+body.error #wrapper a {
+  background-color: #fff;
+}
+
+body.error .header {
+  background-color: #ff0d85;
+  color: #0dffeb;
+}
+
+a {
+  color: #2db3d5;
+  text-decoration: none;
+}
+
+#wrapper {
+  margin: 10px;
+}
+
+#wrapper {
+  line-height: 1.5rem;
+  margin-bottom: 100px;
+}
+
+footer {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+footer .inner {
+  padding: 10px;
+  text-align: center;
+}
+
+.user-actions a {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.header {
+  font-family: 'knewave-outline';
+  font-size: 3rem;
+  background-color: #1cffe2;
+  color: #dafcff;
+  padding: 10px 10px 0 10px;
+  line-height: 4.2rem;
+}
+
+#add {
+  display: inline-block;
+  position: relative;
+  font-size: 4rem;
+  line-height: 3.5rem;
+  margin-left: 10px;
+  background-color: #57ffb6;
+  color: #111;
+  width: 40px;
+  height: 60px;
+  text-align: center;
+}
+
+#add span {
+  display: none;
+}
+
+#add:hover {
+  background-color: #fff;
+}
+
+#add:hover span {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  background-color: #fff557;
+  color: #111;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  left: -210px;
+  bottom: 0px;
+  width: 200px;
+  text-transform: uppercase;
+  font-family: 'knewave-outline';
+}
+
+h1 {
+  font-family: 'knewave-outline';
+  font-size: 2rem;
+  font-weight: 200;
+  margin: 20px 0;
+  word-break: break-all;
+  line-height: 2.2rem;
+  color: #111;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin: 30px 0 5px;
+  font-weight: 200;
+  word-break: break-all;
+  line-height: 1.8rem;
+}
+
+form {
+  width: 100%;
+  border-top: 5px solid #fff;
+  padding: 20px 0;
+}
+
+form, #header-actions {
+  margin: 20px 0;
+}
+
+.errors {
+  background-color: #ff6262;
+  padding: 5px;
+  font-size: 1.2rem;
+  color: #ffdbdb;
+  margin-bottom: 5px;
+}
+
+form input {
+  width: 80%;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+:invalid, :-moz-ui-invalid, :-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:required {
+  box-shadow: none;
+}
+
+.tip {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #777;
+  margin: 0 10px 10px;
+}
+
+textarea, input {
+  border: 1px solid #ccc;
+}
+
+textarea {
+  min-height: 200px;
+  max-height: 600px;
+  width: 95%;
+  padding: 10px;
+}
+
+.threads {
+  width: 95%;
+}
+
+.threads li {
+  background-color: #f8f8f8;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+button {
+  display: block;
+  border: 0;
+  background-color: #57ffb6;
+  font-family: 'knewave-outline';
+  font-size: 2rem;
+  padding: 5px;
+  min-width: 100px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+form.login {
+  background-color: #f1f1f1;
+  width: 250px;
+  right: 0;
+  top: 0;
+  border: 0;
+  padding: 0;
+  margin: 5px;
+  z-index: 3;
+  position: fixed;
+}
+
+form.login input {
+  width: 90%;
+  margin-bottom: 10px;
+}

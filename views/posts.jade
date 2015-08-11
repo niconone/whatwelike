@@ -1,0 +1,12 @@
+include mixins
+extend layout
+
+block content
+  section
+    h1= category
+    ol.threads
+      for post in posts
+        +postView(post, {
+          showDetails: false,
+          linkCategory: false
+        })

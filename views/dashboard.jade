@@ -1,0 +1,11 @@
+include mixins
+extend layout
+
+block content
+  section
+    h1 latest
+    ol.threads
+      for post in posts
+        +postView(post, {
+          showDetails: false
+        })

@@ -1,0 +1,22 @@
+include mixins
+extend layout
+
+block content
+  section.detail
+    h2
+      | posted by:&#xa0;
+      a(href='/user/#{post.author}')= post.postedBy
+
+    ol
+      +postView(post, {
+        showDetails: true,
+        linkCategory: true
+      })
+      if isOwner
+        #actions
+          .edit
+            a(href='/thread/edit/#{post.key}') edit
+          .delete
+            form(method='post', action='/thread/delete/#{post.key}')
+              input(type='hidden', name='crumb', value='#{crumb}')
+              button(type='submit') delete

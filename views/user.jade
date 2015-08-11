@@ -1,0 +1,14 @@
+include mixins
+extend layout
+
+block login
+
+block content
+  section
+    h1= user.name
+
+    ol.mixes
+      for post in posts
+        +postView(post, {
+          showDetails: false
+        })

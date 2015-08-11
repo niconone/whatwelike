@@ -1,0 +1,11 @@
+{
+    "domain": "localhost",
+    "port": 3000,
+    "password": "secret",
+    "cookie": "secret",
+    "session-ttl": 100000000,
+    "analytics": false,
+    "postmark-key": "",
+    "postmark-email": "",
+    "externalDomain": "http://localhost:3000"
+}

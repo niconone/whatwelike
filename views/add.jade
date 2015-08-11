@@ -1,0 +1,22 @@
+extend layout
+
+block new
+
+block content
+  section
+    h1 add a new thread
+
+    if error
+      p.errors= error
+
+    form.post(method='post', action='/post')
+      h2 Category*
+      p.tip in the hostname format similar to: programming.javascript.node
+      input(type='text', name='category', placeholder='alt.something.specific', required)
+      h2 Title*
+      input(type='text', name='title', required)
+      h2 Post*
+      p.tip supports markdown
+      textarea(name='body', required)
+      input(type='hidden', name='crumb', value='#{crumb}')
+      button(type='submit') add

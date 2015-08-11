@@ -1,0 +1,22 @@
+extend layout
+
+block login
+
+block content
+  section
+    h1 profile
+
+    if error
+      p.errors= error
+    if message
+      p.messages= message
+
+    form(method='post', action='/profile')
+      h2 Email
+      span= email
+      h2 Name
+      input(type='text', name='name', placeholder='name', value='#{name}')
+      h2 Password
+      input(type='password', name='password', placeholder='password')
+      input(type='hidden', name='crumb', value='#{crumb}')
+      button(type='submit') update
