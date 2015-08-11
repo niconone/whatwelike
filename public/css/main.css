@@ -111,7 +111,7 @@ a {
 }
 
 footer {
-  background-color: #fff;
+  background-color: #ff730c;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -127,6 +127,8 @@ footer .inner {
 .user-actions a {
   display: inline-block;
   padding: 0 20px;
+  font-weight: 300;
+  color: #fff;
 }
 
 .header {
