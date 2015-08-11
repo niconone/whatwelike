@@ -11,9 +11,9 @@ block content
 
     form(method='post', action='/signup')
       h2 Email*
-      input(type='email', name='email', placeholder='your@email.com', value='#{ email ? email : "" }')
+      input(type='email', name='email', placeholder='your@email.com', value='#{ email ? email : "" }', required)
       h2 Password*
-      input(type='password', name='password', placeholder='password')
+      input(type='password', name='password', placeholder='password', required)
       input(type='hidden', name='crumb', value='#{crumb}')
       button(type='submit') go
 

@@ -59,7 +59,7 @@ html, body {
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: #f9f9f9;
   color: #111;
   font-family: Roboto, Arial, sans-serif;
 }
@@ -138,6 +138,11 @@ footer .inner {
   line-height: 4.2rem;
 }
 
+.subheader {
+  font-family: 'knewave-outline';
+  font-size: 2.5rem;
+}
+
 #add {
   display: inline-block;
   position: relative;
@@ -175,15 +180,13 @@ footer .inner {
 }
 
 h1 {
-  font-family: 'knewave-outline';
   font-size: 2rem;
-  font-weight: 200;
+  font-weight: 300;
   margin: 20px 0;
   word-break: break-all;
   line-height: 2.2rem;
   color: #111;
   padding: 5px 10px;
-  display: inline-block;
 }
 
 h2 {
@@ -249,8 +252,27 @@ textarea {
 }
 
 .threads li {
-  background-color: #f8f8f8;
+  background-color: #fff;
   margin: 5px 0;
+  padding: 10px;
+}
+
+#actions {
+  border-top: 5px solid #fff;
+  margin-top: 20px;
+  padding: 20px 0 0;
+  font-size: 2rem;
+}
+
+#actions form {
+  border: 0;
+}
+
+.category {
+  margin-left: 20px;
+}
+
+.content {
   padding: 10px;
 }
 
@@ -264,6 +286,15 @@ button {
   min-width: 100px;
   text-align: center;
   margin-top: 15px;
+}
+
+button.delete {
+  background-color: #f00;
+  color: #fff;
+}
+
+form.delete {
+  padding: 0;
 }
 
 form.login {
@@ -281,4 +312,25 @@ form.login {
 form.login input {
   width: 90%;
   margin-bottom: 10px;
+}
+
+.comments li {
+  border-bottom: 1px solid #1cfff7;
+  padding: 10px 0;
+}
+
+.comments form {
+  padding: 0;
+  border: 0;
+}
+
+.comments button.delete {
+  background-color: #ccc;
+  float: right;
+  min-width: 40px;
+  margin-top: -50px;
+}
+
+.comments button.delete:hover {
+  background-color: #f00;
 }

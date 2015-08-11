@@ -1,0 +1,10 @@
+extend layout
+
+block content
+  section
+    h1 Topics
+    ol.topics
+      for topic in topics
+        li
+          a(href='/category/#{topic.name}')
+            h2.category= topic.name + ' (' + topic.count + ')'

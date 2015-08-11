@@ -7,7 +7,7 @@ block content
   section
     h1= user.name
 
-    ol.mixes
+    ol.threads
       for post in posts
         +postView(post, {
           showDetails: false

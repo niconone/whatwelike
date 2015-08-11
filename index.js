@@ -111,8 +111,8 @@ var routes = [
   {
     method: 'GET',
     path: '/',
-    handler: services.home,
     config: {
+      handler: services.home,
       auth: auth
     }
   },
@@ -157,8 +157,8 @@ var routes = [
   {
     method: 'GET',
     path: '/dashboard',
-    handler: services.dashboard,
     config: {
+      handler: services.dashboard,
       auth: auth
     }
   },
@@ -181,7 +181,7 @@ var routes = [
       validate: {
         payload: {
           email: Joi.string().email(),
-          password: Joi.string().min(6).required()
+          password: Joi.string().min(6).strip().required()
         }
       }
     }
@@ -189,8 +189,8 @@ var routes = [
   {
     method: 'GET',
     path: '/post',
-    handler: services.newThread,
     config: {
+      handler: services.newThread,
       auth: auth
     }
   },
@@ -253,9 +253,9 @@ var routes = [
     method: 'GET',
     path: '/profile',
     config: {
+      handler: services.profile,
       auth: auth
-    },
-    handler: services.profile
+    }
   },
   {
     method: 'POST',
@@ -266,7 +266,7 @@ var routes = [
       validate: {
         payload: {
           name: Joi.string().required(),
-          password: Joi.string().required()
+          password: Joi.any().optional()
         }
       }
     }
@@ -283,9 +283,33 @@ var routes = [
     method: 'GET',
     path: '/logout',
     config: {
+      handler: authenticate.logout,
       auth: auth
-    },
-    handler: authenticate.logout
+    }
+  },
+  {
+    method: 'GET',
+    path: '/topics',
+    config: {
+      handler: services.topics,
+      auth: auth
+    }
+  },
+  {
+    method: 'POST',
+    path: '/comment',
+    config: {
+      handler: services.addComment,
+      auth: auth
+    }
+  },
+  {
+    method: 'POST',
+    path: '/comment/delete/{key}',
+    config: {
+      handler: services.deleteComment,
+      auth: auth
+    }
   }
 ];
 

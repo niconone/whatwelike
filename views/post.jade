@@ -4,19 +4,27 @@ extend layout
 block content
   section.detail
     h2
-      | posted by:&#xa0;
+      | Posted by:&#xa0;
       a(href='/user/#{post.author}')= post.postedBy
 
     ol
       +postView(post, {
         showDetails: true,
-        linkCategory: true
+        linkCategory: true,
+        isOwner: isOwner
       })
-      if isOwner
-        #actions
-          .edit
-            a(href='/thread/edit/#{post.key}') edit
-          .delete
-            form(method='post', action='/thread/delete/#{post.key}')
-              input(type='hidden', name='crumb', value='#{crumb}')
-              button(type='submit') delete
+
+    if session
+      .comments
+        form(method='post', action='/comment')
+          input(type='text', name='comment', placeholder='add comment', required)
+          input(type='hidden', name='key', value='#{post.key}')
+          input(type='hidden', name='crumb', value='#{crumb}')
+          button(type='submit') add comment
+
+    if isOwner
+      #actions
+        a(href='/thread/edit/#{post.key}') edit
+        form.delete(method='post', action='/thread/delete/#{post.key}')
+          input(type='hidden', name='crumb', value='#{crumb}')
+          button.delete(type='submit') delete

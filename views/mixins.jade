@@ -10,13 +10,28 @@ mixin head(analytics)
 
 mixin postView(post, opts)
   li
+    time
+      a(href='/thread/#{post.key}')= post.createdFromNow
     if opts.linkCategory
-      a(href='/category/#{post.category}')
-        h2.category= post.category
-    if !opts.showDetails
-      a(href='/thread/#{post.key}')
-        h3.head= post.title
-    else
-      h3.head= post.title
+      div Topic:
+        a.category(href='/category/#{post.category}')= post.category
+    h1.head= post.title
 
     .content!= post.bodyMarked
+
+    if opts.showDetails
+      h2.subheader Comments
+
+      ol.comments
+        for comment in post.comments
+          li
+            time= comment.createdFromNow
+            p Posted by&#xa0;
+              a(href='/user/#{comment.author}')= comment.postedBy
+            .content!= comment.commentMarked
+
+            if opts.isOwner || uid == comment.author
+              form(method='post', action='/comment/delete/#{comment.key}')
+                input(type='hidden', name='replyTo', value='#{comment.replyTo}')
+                input(type='hidden', name='crumb', value='#{crumb}')
+                button.delete(type='submit') x
