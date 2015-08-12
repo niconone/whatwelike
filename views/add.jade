@@ -9,6 +9,8 @@ block content
     if error
       p.errors= error
 
+    p.tip.highlight Creating a new thread means that you are the owner. You are free to delete inappropriate/irrelevant comments.
+
     form.post(method='post', action='/post')
       h2 Topic*
       p.tip in the hostname format similar to: programming.javascript.node
