@@ -342,3 +342,10 @@ form.login input {
 .content img {
   max-width: 600px;
 }
+
+.topics li h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #111;
+  font-weight: 300;
+}
