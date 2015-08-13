@@ -16,8 +16,9 @@ block content
 
     if session
       .comments
+        p.tip supports markdown
         form(method='post', action='/comment')
-          input(type='text', name='comment', placeholder='add comment', required)
+          textarea(name='comment', placeholder='add comment', required)
           input(type='hidden', name='key', value='#{post.key}')
           input(type='hidden', name='crumb', value='#{crumb}')
           button(type='submit') add comment
