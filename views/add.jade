@@ -17,7 +17,7 @@ block content
       input(type='text', name='category', placeholder='alt.something.specific', required, list='categories')
       datalist#categories
         for topic in topics
-          option value='#{topic.name}'
+          option(value='#{topic.name}')
       h2 Title*
       input(type='text', name='title', required)
       h2 Post*
