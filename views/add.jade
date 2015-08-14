@@ -15,7 +15,7 @@ block content
       h2 Topic*
       p.tip in the hostname format similar to: programming.javascript.node
       input(type='text', name='category', placeholder='alt.something.specific', required, list='categories')
-      datalist id='categories'
+      datalist#categories
         for topic in topics
           option value='#{topic.name}'
       h2 Title*
