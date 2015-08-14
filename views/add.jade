@@ -14,7 +14,10 @@ block content
     form.post(method='post', action='/post')
       h2 Topic*
       p.tip in the hostname format similar to: programming.javascript.node
-      input(type='text', name='category', placeholder='alt.something.specific', required)
+      input(type='text', name='category', placeholder='alt.something.specific', required, list='categories')
+      datalist id='categories'
+        for topic in topics
+          option value='#{topic.name}'
       h2 Title*
       input(type='text', name='title', required)
       h2 Post*
